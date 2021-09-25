@@ -13,6 +13,23 @@
 </head>
 
 <body>
+    <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+        <div id="status"></div>
+        <script src="http://websdk.sawolabs.com/sawo.min.js"></script>
+        <script>
+            var config = {
+                containerID: "sawo-container",
+                identifierType: "email", // can be either 'email' or 'phone_number_sms'
+                apiKey: "", // add your api key here
+                onSuccess: (payload) => {
+                    document.getElementById("status").innerHTML =
+                        "Login Success";
+                },
+            };
+            var sawo = new Sawo(config);
+            sawo.showForm();
+        </script>
+    
     <div class= "header sticky-top"
     <nav class="navbar navbar-expand-md navbar-light"> 
         <a class="navbar-brand" href="index.html">
